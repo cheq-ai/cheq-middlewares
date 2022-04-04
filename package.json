@@ -1,0 +1,19 @@
+{
+  "name": "cheq-express-meddlewares",
+  "version": "1.0.0",
+  "description": "CHEQ middleware for Express.Js",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheq-ai/cheq-express-meddlewares.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cheq-ai/cheq-express-meddlewares/issues"
+  },
+  "homepage": "https://github.com/cheq-ai/cheq-express-meddlewares#readme"
+}
