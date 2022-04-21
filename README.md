@@ -1,2 +1,1 @@
-# cheq-express-middlewares
-CHEQ middlewares
+# cheq-middlewares
