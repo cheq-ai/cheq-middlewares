@@ -1,2 +1,2 @@
-# cheq-express-meddlewares
+# cheq-express-middlewares
 CHEQ middleware for Express.Js
