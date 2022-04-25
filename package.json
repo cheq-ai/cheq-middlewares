@@ -1,19 +1,39 @@
 {
-  "name": "cheq-express-meddlewares",
+  "name": "@combotag/cheq-meddlewares",
   "version": "1.0.0",
-  "description": "CHEQ middleware for Express.Js",
+  "description": "CHEQ middlewares",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cheq-ai/cheq-express-meddlewares.git"
+    "url": "git+https://github.com/cheq-ai/cheq-middlewares.git"
   },
-  "author": "",
-  "license": "Apache-2.0",
+  "author": "Mamo Tesema",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cheq-ai/cheq-express-meddlewares/issues"
+    "url": "https://github.com/cheq-ai/cheq-middlewares.git/issues"
   },
-  "homepage": "https://github.com/cheq-ai/cheq-express-meddlewares#readme"
+  "homepage": "https://github.com/cheq-ai/cheq-middlewares.git#readme",
+  "devDependencies": {
+    "cookie-parser": "^1.4.6",
+    "eslint": "^8.12.0",
+    "express": "^4.17.3",
+    "jest": "^27.5.1",
+    "md5": "^2.3.0"
+  },
+  "dependencies": {
+    "centra": "^2.5.0"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": [
+    "cheq",
+    "http",
+    "https",
+    "middleware"
+  ]
 }
