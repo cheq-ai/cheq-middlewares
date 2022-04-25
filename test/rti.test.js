@@ -1,19 +1,14 @@
-const { rtiExpressMiddleware } = require('../lib/middlewares');
 const eventsTypes = require('../lib/constans/eventsTypes')
 const { spawn } = require('child_process');
 const c = require('centra');
-//const Server = require('./utils/expressServer')
 jest.setTimeout(100000)
 
-//const rtiMiddleware  = rti({apiKey: 'ad74b116-4414-47de-aa08-ad95b75b4549', tagHash: 'f524989ae9f2fd75606fdbfe0e72cfa5' });
 
 
 describe('rti-express middleware', () => {
     let server;
 
     beforeAll(done => {
-        // server = require('./utils/expressServer')
-        // done()
 
         server = spawn('node', ['./test/utils/expressServer.js']);
         server.stdout.setEncoding('utf8');

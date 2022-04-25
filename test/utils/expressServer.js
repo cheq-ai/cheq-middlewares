@@ -4,11 +4,10 @@ const {rtiExpressMiddleware} = require('../../lib/middlewares');
 const eventsTypes = require('../../lib/constans/eventsTypes')
 
 
-//function server(options = {}) {
-
-
-    const options = {}
+// function server(options = {}) {
+    const options = {};
     const app = express();
+    console.log(options.message)
     const rtiMiddleware  = rtiExpressMiddleware({apiKey: process.env.CHEQ_API_KEY, tagHash: process.env.CHEQ_TAG_HASH, ...options });
 
     app.use(cookieParser())
@@ -28,9 +27,9 @@ const eventsTypes = require('../../lib/constans/eventsTypes')
     app.listen(process.env.TEST_SERVER_PORT, () => {
         process.stdout.write(`test server listening on port ${process.env.TEST_SERVER_PORT}`)
     })
-//}
+// }
 
 
-//module.exports = server()
+
 
 
