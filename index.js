@@ -1,9 +1,4 @@
-const rtiExpressMiddleware = require('./lib/middlewares/rti-express');
+const middlewares = require('./lib/middlewares');
+const eventsTypes = require('./lib/constans/eventsTypes');
 
-
-
-
-
-
-
-module.exports = {rtiExpressMiddleware}
+module.exports = {...middlewares, eventsTypes}
