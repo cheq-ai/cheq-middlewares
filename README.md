@@ -53,7 +53,7 @@ app.listen(3000);
     // callback a function for redirect to capch page 
     // if missing the middleware will use express next function
     callback: function(data) {
-        //do somthing 
+        //do somthing or call next()
         }
 }
 ````
