@@ -24,9 +24,10 @@ const { rti, eventsTypes } = require('cheq-express-middlewares');
 const options = {...};
 const middleware = rti(options);
 
-app.user(middleware(eventsTypes.PAGE_LOAD));
-
-app.get('/', function (req, res) {
+app.get('/subscribe', middleware(eventsTypes.SUBSCRIBE), function (req, res) {
+  res.send('Hello World');
+})
+app.get('/page_load', middleware(eventsTypes.PAGE_LOAD), function (req, res) {
   res.send('Hello World');
 })
 
@@ -42,11 +43,11 @@ app.listen(3000);
     // tag hash this value is required
     tagHash: '$jsk8Kte5',
     
-    // mode, bloking or monitor. this value is optional, if missing value will be set to blocking
+    // mode bloking or monitor. this value is optional, if missing value will be set to blocking
     mode: 'blocking',
     
     // redirectUrl, redirct invalid users to a given URL
-    // if missing will response with 404 status code
+    // if empty will response with 403 status code
     redirectUrl: 'https://invalid-user.com',
     
     // callback a function for redirect to capch page 
