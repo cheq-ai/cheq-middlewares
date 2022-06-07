@@ -1,14 +1,14 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const {rtiExpressMiddleware} = require('../../lib/middlewares');
+const {rti: rtiExpressMiddleware} = require('../../lib/middlewares');
 const eventsTypes = require('../../lib/constans/eventsTypes')
 
 
 // function server(options = {}) {
     const options = {};
     const app = express();
-    console.log(options.message)
-    const rtiMiddleware  = rtiExpressMiddleware({apiKey: process.env.CHEQ_API_KEY, tagHash: process.env.CHEQ_TAG_HASH, ...options });
+    // console.log(options.message)
+    const rtiMiddleware  = rtiExpressMiddleware({apiKey: process.env.CHEQ_API_KEY, tagHash: process.env.CHEQ_TAG_HASH, callback: (req, res, next) => res.status(302).send('suspicious'), ...options });
 
     app.use(cookieParser())
 
