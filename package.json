@@ -1,5 +1,5 @@
 {
-  "name": "@combotag/cheq-meddlewares",
+  "name": "@cheq.ai/cheq-middlewares",
   "version": "1.0.0",
   "description": "CHEQ middlewares",
   "main": "index.js",
