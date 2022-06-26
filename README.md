@@ -5,11 +5,11 @@ CHEQ middlewares for Express.Js
 
 ## Features
 
-- [Installing](#installing)
+- [Installation](#installation)
 - [Real time interception](#real-time-interception)
 
 
-## installing
+## Installation
 ````bash
 $ npm install cheq-express-middlewares
 ````
@@ -20,29 +20,28 @@ Real-Time Interception (RTI) supports API calls to provide detection of invalid 
 
 ### Configuration
 
-####Required configuration
+#### Required configuration
 
-#####Api key
+##### Api key
 
 Available on the Paradome platform under “Management -> RTI”
 
-#####Tag hash
+##### Tag hash
 
-Appears in your Cheq tag. i.e 4d7d2a6e01b6438af7d403a172e7b243
+Appears in your Cheq tag. 
 
+#### Optional configuration
 
-####Optional configuration
-
-#####Mode
+##### Mode
 
 Blocking or Monitoring. The default value will be Monitoring.
 
-#####Redirect URL
+##### Redirect URL
 
 A path you would like to redirect invalid users to. 
 If it is empty the response will be status code 403.
 
-#####Callback function
+##### Callback function
 
 A custom callback option, for instance to redirect to captcha page.
 If it is empty, will use express next function.
@@ -66,25 +65,26 @@ app.get('/page_load', middleware(eventsTypes.PAGE_LOAD), function (req, res) {
 })
 
 app.listen(3000);
+````
 
 ### Options object
 
 ```` js
 {
-    // api key this value is required
+    // api key, this value is required
     apiKey: 'xyz',
     
-    // tag hash this value is required
-    tagHash: '$jsk8Kte5',
+    // tag hash, this value is required
+    tagHash: '4d7d2a6e01b6438af7d403a172e7b243',
     
-    // mode blocking or monitor. this value is optional, if missing value will be set to blocking
-    mode: 'blocking',
+    // mode blocking or monitor. this value is optional, if missing value will be set to monitoring
+    mode: 'monitoring',
     
     // redirectUrl, redirct invalid users to a given URL
-    // if empty will response with 403 status code
+    // if empty will respond with 403 status code
     redirectUrl: 'https://invalid-user.com',
     
-    // callback a function for redirect to capch page 
+    // callback a function for redirect to captcha page 
     // if missing the middleware will use express next function
     callback: function(req, res, next) {
         //do somthing or call next()
