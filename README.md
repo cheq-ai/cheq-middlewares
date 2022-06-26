@@ -16,6 +16,29 @@ $ npm install cheq-express-middlewares
 
 ## Real time interception
 
+Real-Time Interception (RTI) supports API calls to provide detection of invalid traffic (IVT) to your site, in absolute real-time.  RTI will intercept IVT to prevent invalid visitors from harming your conversion efforts.
+
+### Configuration
+
+####Required configuration
+#####Api key
+Available on the Paradome platform under “Management -> RTI”
+#####Tag hash
+Appears in your Cheq tag. i.e 4d7d2a6e01b6438af7d403a172e7b243
+
+####Optional configuration
+#####Mode
+Blocking or Monitoring. The default value will be Monitoring.
+#####Redirect URL
+A path you would like to redirect invalid users to. 
+If it is empty the response will be status code 403.
+#####Callback function
+A custom callback option, for instance to redirect to captcha page.
+If it is empty, will use express next function.
+
+### Usage example
+
+
 ```` js
 const express = require('express');
 const app = express();
@@ -32,7 +55,7 @@ app.get('/page_load', middleware(eventsTypes.PAGE_LOAD), function (req, res) {
 })
 
 app.listen(3000);
-````
+
 ### Options object
 
 ```` js
@@ -43,7 +66,7 @@ app.listen(3000);
     // tag hash this value is required
     tagHash: '$jsk8Kte5',
     
-    // mode bloking or monitor. this value is optional, if missing value will be set to blocking
+    // mode blocking or monitor. this value is optional, if missing value will be set to blocking
     mode: 'blocking',
     
     // redirectUrl, redirct invalid users to a given URL
