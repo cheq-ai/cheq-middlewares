@@ -21,18 +21,29 @@ Real-Time Interception (RTI) supports API calls to provide detection of invalid 
 ### Configuration
 
 ####Required configuration
+
 #####Api key
+
 Available on the Paradome platform under “Management -> RTI”
+
 #####Tag hash
+
 Appears in your Cheq tag. i.e 4d7d2a6e01b6438af7d403a172e7b243
 
+
 ####Optional configuration
+
 #####Mode
+
 Blocking or Monitoring. The default value will be Monitoring.
+
 #####Redirect URL
+
 A path you would like to redirect invalid users to. 
 If it is empty the response will be status code 403.
+
 #####Callback function
+
 A custom callback option, for instance to redirect to captcha page.
 If it is empty, will use express next function.
 
