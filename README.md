@@ -22,29 +22,66 @@ Real-Time Interception (RTI) supports API calls to provide detection of invalid 
 
 #### Required configuration
 
-##### Api key
+##### API key
 
 Available on the Paradome platform under “Management -> RTI”
+
+```` js
+{
+    apiKey: 'xyz'
+}
+````
 
 ##### Tag hash
 
 Appears in your Cheq tag. 
 
+```` js
+{
+    tagHash: '4d7d2a6e01b6438af7d403a172e7b243'
+}
+````
+
 #### Optional configuration
 
 ##### Mode
 
-Blocking or Monitoring. The default value will be Monitoring.
+- `Monitoring` - Will not perform any action
+
+- `Blocking` - Will block Invalid traffic or redirect them to a different url (defind in [Redirect URL](#redirect-url)).
+
+The default value will be `Monitoring`.
+
+```` js
+{
+    mode: 'monitoring'
+}
+````
 
 ##### Redirect URL
 
 A path you would like to redirect invalid users to. 
-If it is empty the response will be status code 403.
+
+If it is empty the response will be status code 403 and the user will be blocked.
+
+```` js
+{
+     redirectUrl: 'https://invalid-user.com'
+}
+````
 
 ##### Callback function
 
 A custom callback option, for instance to redirect to captcha page.
 If it is empty, will use express next function.
+
+```` js
+{
+     callback: function(req, res, next) {
+        //do somthing or call next()
+        }
+}
+````
 
 ### Usage example
 
