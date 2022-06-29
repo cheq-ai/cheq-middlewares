@@ -27,8 +27,10 @@ Real-Time Interception (RTI) supports API calls to provide detection of invalid 
 Available on the Paradome platform under “Management -> RTI”
 
 ```` js
-{
-    apiKey: 'xyz'
+const options = {
+    ...
+    apiKey: '11abc111-aa11-11aa-1111-11a11a11111'
+    ...
 }
 ````
 
@@ -37,8 +39,10 @@ Available on the Paradome platform under “Management -> RTI”
 Appears in your Cheq tag. 
 
 ```` js
-{
-    tagHash: '4d7d2a6e01b6438af7d403a172e7b243'
+const options = {
+    ...
+    tagHash: 'c99651e7936e27743ce51c728492aac9'
+    ...
 }
 ````
 
@@ -46,15 +50,17 @@ Appears in your Cheq tag.
 
 ##### Mode
 
-- `Monitoring` - Will not perform any action
+- `monitoring` - Will not perform any action
 
-- `Blocking` - Will block Invalid traffic or redirect them to a different url (defind in [Redirect URL](#redirect-url)).
+- `blocking` - Will block Invalid traffic or redirect them to a different url (defind in [Redirect URL](#redirect-url)).
 
-The default value will be `Monitoring`.
+The default value will be `monitoring`.
 
 ```` js
-{
+const options = {
+    ...
     mode: 'monitoring'
+    ...
 }
 ````
 
@@ -65,8 +71,10 @@ A path you would like to redirect invalid users to.
 If it is empty the response will be status code 403 and the user will be blocked.
 
 ```` js
-{
+const options = {
+    ...
      redirectUrl: 'https://invalid-user.com'
+    ...
 }
 ````
 
@@ -76,10 +84,12 @@ A custom callback option, for instance to redirect to captcha page.
 If it is empty, will use express next function.
 
 ```` js
-{
+const options = {
+    ...
      callback: function(req, res, next) {
         //do somthing or call next()
         }
+    ...
 }
 ````
 
@@ -109,7 +119,7 @@ app.listen(3000);
 ```` js
 {
     // api key, this value is required
-    apiKey: 'xyz',
+    apiKey: '11abc111-aa11-11aa-1111-11a11a11111',
     
     // tag hash, this value is required
     tagHash: '4d7d2a6e01b6438af7d403a172e7b243',
