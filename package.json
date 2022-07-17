@@ -1,11 +1,11 @@
 {
   "name": "@cheq.ai/cheq-middlewares",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "CHEQ middlewares",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage=true",
-    "publish": "npm publish & git commit -am \"version patch\" & git push"
+    "publish": "git commit -am \"version patch\" && git push && npm publish"
   },
   "repository": {
     "type": "git",
