@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage=true",
-    "version-patch": "git commit -am \"version patch\" && git push",
-    "publish": "npm publish"
+    "version-patch": "git commit -am \"version patch\" && git push"
   },
   "repository": {
     "type": "git",
