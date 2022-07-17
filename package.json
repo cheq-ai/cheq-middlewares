@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage=true",
-    "publish": "git commit -am \"version patch\" && git push && npm publish"
+    "version-patch": "git commit -am \"version patch\" && git push",
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,8 @@
     "eslint": "^7.32.0",
     "eslint-plugin-jest": "^26.5.3",
     "express": "^4.17.3",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "npm-run-all": "^4.1.5"
   },
   "dependencies": {},
   "directories": {
