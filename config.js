@@ -1,6 +1,6 @@
 module.exports = {
-	baseApi: 'https://obstaging.cheqzone.com',
+	baseApi: 'https://obs.cheqzone.com',
 	rtiPath: 'realtime-interception',
-	rtiTimeout: 10000,// dev
+	rtiTimeout: 100,
 	defaultApiVersion:'v1'
 };
