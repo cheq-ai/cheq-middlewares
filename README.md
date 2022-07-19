@@ -93,6 +93,18 @@ const options = {
 }
 ````
 
+##### Timeout
+
+Optional timeout in milliseconds, if absent value will be set to 100 milliseconds.
+
+```` js
+const options = {
+    ...
+     timeout: 1000 // one second
+    ...
+}
+````
+
 ### Usage example
 
 
