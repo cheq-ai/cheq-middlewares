@@ -11,7 +11,7 @@ CHEQ middlewares for Express.Js
 
 ## Installation
 ````bash
-$ npm install cheq-express-middlewares
+$ npm install @cheq.ai/cheq-express-middlewares
 ````
 
 ## Real time interception
