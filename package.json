@@ -24,7 +24,9 @@
     "express": "^4.17.3",
     "jest": "^27.5.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "request-ip": "^3.3.0"
+  },
   "directories": {
     "lib": "lib",
     "test": "test"

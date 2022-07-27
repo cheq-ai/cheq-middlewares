@@ -1,5 +1,5 @@
 module.exports = {
-	baseApi: 'https://obstaging.cheqzone.com',
+	baseApi: 'https://obs.cheqzone.com',
 	rtiPath: 'realtime-interception',
 	rtiLoggerEndpoint: 'https://rtilogger.production.cheq-platform.com',
 	rtiTimeout: 100,

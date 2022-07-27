@@ -1,5 +1,5 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 const {rti: rtiExpressMiddleware} = require('../../lib/middlewares');
 const {eventsTypes} = require('../../lib/constans/rti');
 
@@ -11,13 +11,12 @@ const rtiMiddleware = rtiExpressMiddleware({
 	apiKey: process.env.CHEQ_API_KEY,
 	tagHash: process.env.CHEQ_TAG_HASH,
 	mode: process.argv[process.argv.length - 1],
-	timeout: 2000,
 	callback: (req, res) => {
 		res.status(302).send('suspicious');
 	}
 });
 
-app.use(cookieParser());
+// app.use(cookieParser());
 
 app.use((req, res, next) => {
 	console.log(req.originalUrl);
