@@ -15,18 +15,6 @@ describe('rti middleware', () => {
 		expect(() => request({})).toThrow('missing request url');
 	});
 
-	// test('should return request object', () => {
-	// 	const r = request('https://google.com');
-	// 	r.body('');
-	// 	expect(r.headers['Content-Type']).toEqual('text/html');
-	// 	r.body({});
-	// 	expect(r.headers['Content-Type']).toEqual('application/json');
-	// 	r.body({}, 'form');
-	// 	expect(r.headers['Content-Type']).toEqual('application/x-www-form-urlencoded');
-	// 	r.header('Content-Type', 'text/html');
-	// 	expect(r.headers['Content-Type']).toEqual('text/html');
-	// });
-
 	test('should throw missing apiKey error', () => {
 		const options = {
 			tagHash: 'abc'

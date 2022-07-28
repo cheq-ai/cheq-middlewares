@@ -1,10 +1,7 @@
 const express = require('express');
-// const cookieParser = require('cookie-parser');
 const {rti: rtiExpressMiddleware} = require('../../lib/middlewares');
 const {eventsTypes} = require('../../lib/constans/rti');
 
-
-// function server(options = {}) {
 const app = express();
 
 const rtiMiddleware = rtiExpressMiddleware({
@@ -15,8 +12,6 @@ const rtiMiddleware = rtiExpressMiddleware({
 		res.status(302).send('suspicious');
 	}
 });
-
-// app.use(cookieParser());
 
 app.use((req, res, next) => {
 	console.log(req.originalUrl);
@@ -38,9 +33,4 @@ app.get(`/${eventsTypes.FORM_SUBMISSION}`, rtiMiddleware(eventsTypes.FORM_SUBMIS
 app.listen(process.env.TEST_SERVER_PORT, '0.0.0.0', () => {
 	process.stdout.write(`test server listening on port ${process.env.TEST_SERVER_PORT}`);
 });
-// }
-
-
-
-
 

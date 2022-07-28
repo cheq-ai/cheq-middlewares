@@ -50,7 +50,6 @@ describe('e2e tests', () =>{
 
 	test(`${eventsTypes.PAGE_LOAD} - datacenter ip`,  () => {
 		const expectedResponse = {
-			// message: 'Visitor is invalid, session blocked!',
 			message: 'suspicious',
 			status: 302
 		};

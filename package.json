@@ -5,20 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage=true",
-    "version-patch": "sh publish.sh"
+    "version-patch": "sh scripts/publish.sh"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cheq-ai/cheq-middlewares.git"
   },
-  "author": "Mamo Tesema",
-  "license": "MIT",
+  "author": "Cheq.ai",
+  "license": "Apache",
   "bugs": {
     "url": "https://github.com/cheq-ai/cheq-middlewares.git/issues"
   },
   "homepage": "https://github.com/cheq-ai/cheq-middlewares.git#readme",
   "devDependencies": {
-    "cookie-parser": "^1.4.6",
     "eslint": "^7.32.0",
     "eslint-plugin-jest": "^26.5.3",
     "express": "^4.17.3",
@@ -35,6 +34,8 @@
     "cheq",
     "http",
     "https",
-    "middleware"
+    "middleware",
+    "RTI",
+    "real time interception"
   ]
 }
