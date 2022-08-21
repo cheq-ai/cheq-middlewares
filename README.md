@@ -36,12 +36,23 @@ const options = {
 
 ##### Tag hash
 
-Appears in your Cheq tag. 
+Appears in your CHEQ tag. 
 
 ```` js
 const options = {
     ...
     tagHash: 'c99651e7936e27743ce51c728492aac9'
+    ...
+}
+````
+##### Server region
+
+Must be the same as the region in you CHEQ tag.
+
+```` js
+const options = {
+    ...
+    
     ...
 }
 ````
@@ -63,7 +74,23 @@ const options = {
     ...
 }
 ````
+##### Threat types
 
+Allowing you to change the threat types you would like to perform actions on (Block, redirect or use custom function)
+
+The default values will be:
+
+Block / Redirect - Threat type :2,3,6,7,10,11,16,18
+
+Custom callback function - Threat types: 4,5,13,14,15,17
+
+```` js
+const options = {
+    ...
+   
+    ...
+}
+````
 ##### Redirect URL
 
 A path you would like to redirect invalid users to. 
@@ -104,6 +131,25 @@ const options = {
     ...
 }
 ````
+##### Trusted IP headers
+
+```` js
+const options = {
+    ...
+     
+    ...
+}
+````
+##### Uri regex exclusion
+
+```` js
+const options = {
+    ...
+     
+    ...
+}
+````
+
 
 ### Usage example
 
