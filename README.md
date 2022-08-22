@@ -46,6 +46,20 @@ const options = {
 }
 ````
 
+##### API endpoint
+The nearest API endpoint to your server. <br>Can be one of the following
+- US: https://rti-us-east-1.cheqzone.com
+- EU: https://rti-eu-west-1.cheqzone.com
+- global: https://rti-global.cheqzone.com
+
+```` js
+const options = {
+    ...
+    apiEndpoint: 'https://rti-global.cheqzone.com'
+    ...
+}
+````
+
 #### Optional configuration
 
 ##### Mode
@@ -64,9 +78,68 @@ const options = {
 }
 ````
 
+
+##### IP header
+
+Specify a trusted IP header to be used as client IP
+```` js
+const options = {
+  ...
+  trustedIPHeader: 'client-ip'
+  ...
+};
+````
+
+
+
+##### Resource type
+
+A mime type of the response content-type header 
+
+```` js
+const options = {
+  ...
+  resourceType: 'text/html'
+  ...
+};
+````
+
+
+##### Threat types codes
+
+The threat types codes for blocking or redirect and for captcha <br>
+Threat type must be uniq for each list 
+
+```` js
+const options = {
+  ...
+    threatTypesCodes: {
+        blockRedirect: [2, 3, 6, 7, 10, 11, 16, 18],
+        captcha: [4, 5, 13, 14, 15, 17]
+    }
+  ...
+};
+````
+
+
+
+##### URI Exclusion
+
+An array of regular expressions or path that will be excluded
+
+```` js
+const options = {
+  ...
+  URIExclusion: ['/about', /\/add_to_cart.*item=698/]
+  ...
+};
+````
+
+
+
 ##### Redirect URL
 
-A path you would like to redirect invalid users to. 
+A URL you would like to redirect invalid users to. 
 
 If it is empty the response will be status code 403 and the user will be blocked.
 
@@ -126,27 +199,3 @@ app.get('/page_load', middleware(eventsTypes.PAGE_LOAD), function (req, res) {
 app.listen(3000);
 ````
 
-### Options object
-
-```` js
-{
-    // api key, this value is required
-    apiKey: '11abc111-aa11-11aa-1111-11a11a11111',
-    
-    // tag hash, this value is required
-    tagHash: '4d7d2a6e01b6438af7d403a172e7b243',
-    
-    // mode blocking or monitor. this value is optional, if missing value will be set to monitoring
-    mode: 'monitoring',
-    
-    // redirectUrl, redirct invalid users to a given URL
-    // if empty will respond with 403 status code
-    redirectUrl: 'https://invalid-user.com',
-    
-    // callback a function for redirect to captcha page 
-    // if missing the middleware will use express next function
-    callback: function(req, res, next) {
-        //do somthing or call next()
-        }
-}
-````

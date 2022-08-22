@@ -7,7 +7,9 @@ const app = express();
 const rtiMiddleware = rtiExpressMiddleware({
 	apiKey: process.env.CHEQ_API_KEY,
 	tagHash: process.env.CHEQ_TAG_HASH,
+	apiEndpoint: process.env.CHEQ_API_ENDPOINT,
 	mode: process.argv[process.argv.length - 1],
+	trustedIPHeader: 'Trusted-IP-Header',
 	callback: (req, res) => {
 		res.status(302).send('suspicious');
 	}

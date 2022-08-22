@@ -20,12 +20,10 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-plugin-jest": "^26.5.3",
-    "express": "^4.17.3",
+    "express": "^3.1.0",
     "jest": "^27.5.1"
   },
-  "dependencies": {
-    "request-ip": "^3.3.0"
-  },
+  "dependencies": {},
   "directories": {
     "lib": "lib",
     "test": "test"
