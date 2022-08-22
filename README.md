@@ -47,7 +47,7 @@ const options = {
 ````
 
 ##### API endpoint
-The nearest API endpoint to your server. <br>Can be one of the following
+The nearest API endpoint to your server. Must be the same region as your tag domain.<br>Can be one of the following:
 - US: https://rti-us-east-1.cheqzone.com
 - EU: https://rti-eu-west-1.cheqzone.com
 - global: https://rti-global.cheqzone.com
@@ -108,7 +108,7 @@ const options = {
 ##### Threat types codes
 
 The threat types codes for blocking or redirect and for captcha <br>
-Threat type must be uniq for each list 
+Threat type must be unique for each list 
 
 ```` js
 const options = {
