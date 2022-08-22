@@ -36,7 +36,7 @@ const options = {
 
 ##### Tag hash
 
-Appears in your Cheq tag. 
+Appears in your CHEQ tag. 
 
 ```` js
 const options = {
