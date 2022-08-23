@@ -5,8 +5,23 @@ CHEQ middlewares for Express.Js
 
 ## Features
 
-- [Installation](#installation)
-- [Real time interception](#real-time-interception)
+* [Installation](#installation)
+* [Real time interception](#real-time-interception)
+    * [Required configuration](#required-configuration)
+        * [API key](#api-key)
+        * [Tag hash](#tag-hash)
+        * [API endpoint](#api-endpoint)
+    * [Optional configuration](#optional-configuration)
+        * [Mode](#mode)
+        * [IP header](#ip-header)
+        * [Resource type](#resource-type)
+        * [Threat types codes](#threat-types-codes)
+        * [URI Exclusion](#uri-exclusion)
+        * [Redirect URL](#redirect-url)
+        * [Callback function](#callback-function)
+        * [Timeout](#timeout)
+     * [Usage example](#usage-example)
+   
 
 
 ## Installation
@@ -107,8 +122,14 @@ const options = {
 
 ##### Threat types codes
 
-The threat types codes for blocking or redirect and for captcha <br>
-Threat type must be unique for each list 
+Threat types are devided to two groups:
+
+1. Block/Redirect - traffic detected as threat types in this group would be blocked or redirected to a different page (defind in [Redirect URL](#redirect-url).<br>
+        Default threat type codes for this group:  2,3,6,7,10,11,16,18.
+        
+2. Captcha - threat type codes in this group would be reffered to [Callback function](#callback-function). <br>
+        Default threat type codes for this group:  4,5,13,14,15,17.
+Threat type must be unique for each list. 
 
 ```` js
 const options = {
