@@ -20,6 +20,8 @@ CHEQ middlewares for Express.Js
         * [Redirect URL](#redirect-url)
         * [Callback function](#callback-function)
         * [Timeout](#timeout)
+        * [Channel](#channel)
+        * [Ja3](#ja3)
      * [Usage example](#usage-example)
    
 
@@ -214,7 +216,7 @@ const options = {
 }
 ````
 
-##### Channel
+##### Ja3
 
 A function that extract ja3 fingerprint from the request.
 SSL/TLS client fingerprints
