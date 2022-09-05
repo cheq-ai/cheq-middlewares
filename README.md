@@ -203,7 +203,7 @@ const options = {
 
 ##### Channel
 
-A function that extract channel from the request.
+A function that extract channel from the request.<br>
 Will be used for Event Name in order to classify request by user's groups
 
 ```` js
@@ -218,7 +218,7 @@ const options = {
 
 ##### Ja3
 
-A function that extract ja3 fingerprint from the request.
+A function that extract ja3 fingerprint from the request.<br>
 SSL/TLS client fingerprints
 
 ```` js
