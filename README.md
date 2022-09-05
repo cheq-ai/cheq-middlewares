@@ -199,6 +199,36 @@ const options = {
 }
 ````
 
+##### Channel
+
+A function that extract channel from the request.
+Will be used for Event Name in order to classify request by user's groups
+
+```` js
+const options = {
+    ...
+     getChannel: function getChannel(req) {
+        return req.query.channel
+     }
+    ...
+}
+````
+
+##### Channel
+
+A function that extract ja3 fingerprint from the request.
+SSL/TLS client fingerprints
+
+```` js
+const options = {
+    ...
+     getJa3: function getJa3(req) {
+        return req.query.ja3
+     }
+    ...
+}
+````
+
 ### Usage example
 
 
