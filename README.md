@@ -67,12 +67,11 @@ const options = {
 The nearest API endpoint to your server. Must be the same region as your tag domain.<br>Can be one of the following:
 - US: https://rti-us-east-1.cheqzone.com
 - EU: https://rti-eu-west-1.cheqzone.com
-- global: https://rti-global.cheqzone.com
 
 ```` js
 const options = {
     ...
-    apiEndpoint: 'https://rti-global.cheqzone.com'
+    apiEndpoint: 'https://rti-eu-west1.cheqzone.com'
     ...
 }
 ````
