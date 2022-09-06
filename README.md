@@ -20,7 +20,7 @@ CHEQ middlewares for Express.Js
         * [Redirect URL](#redirect-url)
         * [Callback function](#callback-function)
         * [Timeout](#timeout)
-        * [Channel](#channel)
+        * [Custom event name](#custom-event-name)
         * [Ja3](#ja3)
      * [Usage example](#usage-example)
    
@@ -111,7 +111,9 @@ const options = {
 
 ##### Resource type
 
-A mime type of the response content-type header 
+A mime type of the response content-type header. 
+
+This is recommended to improve detection.
 
 ```` js
 const options = {
@@ -201,10 +203,9 @@ const options = {
 }
 ````
 
-##### Channel
+##### Custom event name
 
-A function that extract channel from the request.<br>
-Will be used for Event Name in order to classify request by user's groups
+In case a custom event name is used, this function extracts the name of the custom event.<br> 
 
 ```` js
 const options = {
@@ -218,7 +219,7 @@ const options = {
 
 ##### Ja3
 
-A function that extract ja3 fingerprint from the request.<br>
+A function that extracts ja3 fingerprint from the request.<br>
 SSL/TLS client fingerprints
 
 ```` js
