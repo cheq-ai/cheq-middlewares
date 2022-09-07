@@ -237,7 +237,7 @@ const options = {
 ```` js
 const express = require('express');
 const app = express();
-const { rti, eventsTypes } = require('cheq-express-middlewares');
+const { rti, eventsTypes } = require('@cheq.ai/cheq-express-middlewares');
 
 const options = {...};
 const middleware = rti(options);
