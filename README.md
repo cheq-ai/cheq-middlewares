@@ -110,14 +110,19 @@ const options = {
 
 ##### Resource type
 
-A mime type of the response content-type header. 
+A function to get the response content-type header. 
 
 This is recommended to improve detection.
 
 ```` js
 const options = {
   ...
-  resourceType: 'text/html'
+  getResourceType: function(req) {
+    if(req.method === 'POST') {
+        return 'application/json'
+    }
+   
+  }
   ...
 };
 ````

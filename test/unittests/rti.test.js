@@ -1,39 +1,60 @@
 const { rti } = require('../../index');
 const request = require('../../lib/utils/request');
+const config = require('../../config');
+const errorsCodes = require('../../lib/constans/errorsCodes');
 
 describe('rti middleware', () => {
 
-	test('should throw invalid params', () => {
-		expect(() => rti()).toThrow('invalid params');
+	test(`should throw ${errorsCodes.errInvalidParams}`, () => {
+		expect(() => rti()).toThrow(errorsCodes.errInvalidParams);
 	});
 
-	test('should throw invalid params - pass array ', () => {
+	test(`should throw ${errorsCodes.errInvalidParams}`, () => {
 		expect(() => rti([])).toThrow('not object');
 	});
 
-	test('should throw missing request url', () => {
-		expect(() => request({})).toThrow('missing request url');
-	});
-
-	test('should throw missing apiKey error', () => {
+	test(`should throw ${errorsCodes.errInvalidApiKey}`, () => {
 		const options = {
 			tagHash: 'abc'
 		};
 
-		expect(() => rti(options)).toThrow('missing apiKey');
+		expect(() => rti(options)).toThrow(errorsCodes.errInvalidApiKey);
 	});
 
-	test('should throw missing tagHash error', () => {
+	test(`should throw ${errorsCodes.errInvalidTagHash}`, () => {
 		const options = {
 			apiKey: 'abc'
 		};
-		expect(() => rti(options)).toThrow('missing tagHash');
+		expect(() => rti(options)).toThrow(errorsCodes.errInvalidTagHash);
 	});
 
-	test('should express handler function', () => {
+	test(`should throw ${errorsCodes.errInvalidApiEndpoint}`, () => {
 		const options = {
 			apiKey: 'abc',
 			tagHash: 'abc'
+		};
+		expect(() => rti(options)).toThrow(errorsCodes.errInvalidApiEndpoint);
+	});
+
+	test(`should throw ${errorsCodes.errInvalidURIExclusionArray}`, () => {
+		const options = {
+			apiKey: 'abc',
+			tagHash: 'abc',
+			apiEndpoint: config.apiEndpoints.US,
+			URIExclusion: 'abc'
+		};
+		expect(() => rti(options)).toThrow(errorsCodes.errInvalidURIExclusionArray);
+		options.URIExclusion = ['/about',2];
+		expect(() => rti(options)).toThrow(errorsCodes.errInvalidURIExclusionArray);
+	});
+
+
+	test('should get express handler function', () => {
+		const options = {
+			apiKey: 'abc',
+			tagHash: 'abc',
+			apiEndpoint: config.apiEndpoints.US,
+			URIExclusion: []
 		};
 		expect(rti(options)).toBeInstanceOf(Function);
 	});
