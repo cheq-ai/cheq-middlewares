@@ -1,4 +1,4 @@
-const pJson = require('../../package.json');
+const pJson = require('./package.json');
 
 module.exports = {
 	apiEndpoints: {
