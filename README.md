@@ -13,15 +13,15 @@ CHEQ middlewares for Express.Js
         * [API endpoint](#api-endpoint)
     * [Optional configuration](#optional-configuration)
         * [Mode](#mode)
-        * [IP header](#ip-header)
-        * [Resource type](#resource-type)
-        * [Threat types codes](#threat-types-codes)
-        * [URI Exclusion](#uri-exclusion)
+        * [Threat type codes](#threat-type-codes)
         * [Redirect URL](#redirect-url)
         * [Callback function](#callback-function)
+        * [Ja3](#ja3)
+        * [Resource type](#resource-type)
+        * [IP header](#ip-header)
+        * [URI Exclusion](#uri-exclusion)
         * [Timeout](#timeout)
         * [Custom event name](#custom-event-name)
-        * [Ja3](#ja3)
      * [Usage example](#usage-example)
    
 
@@ -64,7 +64,7 @@ const options = {
 ````
 
 ##### API endpoint
-The nearest API endpoint to your server. Must be the same region as your tag domain.<br>Can be one of the following:
+The nearest API endpoint to your server. Must be the same region as your tag domain.<br>Select the appropriate endpoint:
 - US: https://rti-us-east-1.cheqzone.com
 - EU: https://rti-eu-west-1.cheqzone.com
 
@@ -94,41 +94,7 @@ const options = {
 }
 ````
 
-
-##### IP header
-
-Specify a trusted IP header to be used as client IP
-```` js
-const options = {
-  ...
-  trustedIPHeader: 'client-ip'
-  ...
-};
-````
-
-
-
-##### Resource type
-
-A function to get the response content-type header. 
-
-This is recommended to improve detection.
-
-```` js
-const options = {
-  ...
-  getResourceType: function(req) {
-    if(req.method === 'POST') {
-        return 'application/json'
-    }
-   
-  }
-  ...
-};
-````
-
-
-##### Threat types codes
+##### Threat type codes
 
 Threat types are devided to two groups:
 
@@ -149,23 +115,6 @@ const options = {
   ...
 };
 ````
-
-
-
-##### URI Exclusion
-
-An array of regular expressions or path that will be excluded
-
-```` js
-const options = {
-  ...
-  URIExclusion: ['/about', /\/add_to_cart.*item=698/]
-  ...
-};
-````
-
-
-
 ##### Redirect URL
 
 A URL you would like to redirect invalid users to. 
@@ -194,6 +143,70 @@ const options = {
     ...
 }
 ````
+##### Ja3
+
+Recommended - A function that extracts ja3 fingerprint from the request.<br>
+SSL/TLS client fingerprints
+
+```` js
+const options = {
+    ...
+     getJa3: function getJa3(req) {
+        return req.query.ja3
+     }
+    ...
+}
+````
+##### Resource type
+
+A function to get the response content-type header. 
+
+This is recommended to improve detection.
+
+```` js
+const options = {
+  ...
+  getResourceType: function(req) {
+    if(req.method === 'POST') {
+        return 'application/json'
+    }
+   
+  }
+  ...
+};
+````
+
+##### IP header
+
+Specify a trusted IP header to be used as client IP
+```` js
+const options = {
+  ...
+  trustedIPHeader: 'client-ip'
+  ...
+};
+````
+
+
+
+
+
+
+##### URI Exclusion
+
+An array of regular expressions or path that will be excluded
+
+```` js
+const options = {
+  ...
+  URIExclusion: ['/about', '/careers']
+  ...
+};
+````
+
+
+
+
 
 ##### Timeout
 
@@ -221,20 +234,7 @@ const options = {
 }
 ````
 
-##### Ja3
 
-A function that extracts ja3 fingerprint from the request.<br>
-SSL/TLS client fingerprints
-
-```` js
-const options = {
-    ...
-     getJa3: function getJa3(req) {
-        return req.query.ja3
-     }
-    ...
-}
-````
 
 ### Usage example
 
