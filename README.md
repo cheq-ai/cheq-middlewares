@@ -168,7 +168,9 @@ const options = {
   ...
   getResourceType: function(req) {
     if(req.method === 'POST') {
-        return 'application/json'
+        return 'application/json';
+    } else if(req.url === '/') {
+        return 'text/html';
     }
    
   }
