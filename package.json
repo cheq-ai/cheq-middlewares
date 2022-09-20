@@ -1,0 +1,39 @@
+{
+  "name": "@cheq.ai/cheq-middlewares",
+  "version": "1.0.11",
+  "description": "CHEQ middlewares",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage=true",
+    "version-patch": "sh scripts/publish.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheq-ai/cheq-middlewares.git"
+  },
+  "author": "Cheq.ai",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/cheq-ai/cheq-middlewares.git/issues"
+  },
+  "homepage": "https://github.com/cheq-ai/cheq-middlewares.git#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "express": "^4.1.1",
+    "jest": "^27.5.1"
+  },
+  "dependencies": {},
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": [
+    "cheq",
+    "http",
+    "https",
+    "middleware",
+    "RTI",
+    "real time interception"
+  ]
+}
