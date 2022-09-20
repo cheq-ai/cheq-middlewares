@@ -258,4 +258,3 @@ app.get('/page_load', middleware(eventsTypes.PAGE_LOAD), function (req, res) {
 
 app.listen(3000);
 ````
-
