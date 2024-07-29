@@ -10,6 +10,7 @@ module.exports = {
 	rtiPath: 'realtime-interception',
 	rtiLoggerEndpoint: 'https://rtilogger.production.cheq-platform.com',
 	rtiTimeout: 100,
-	defaultApiVersion:'v1',
+	defaultApiVersionV1:'v1',
+	defaultApiVersionV3:'v3',
 	middlewareVersion: pJson.version
 };
