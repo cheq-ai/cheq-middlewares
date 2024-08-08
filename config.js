@@ -1,6 +1,6 @@
 const pJson = require('./package.json');
 
-module.exports = {
+const rtiConfig = {
 	apiEndpoints: {
 		US: 'https://rti-us-east-1.cheqzone.com',
 		EU: 'https://rti-eu-west-1.cheqzone.com',
@@ -14,3 +14,19 @@ module.exports = {
 	defaultApiVersionV3:'v3',
 	middlewareVersion: pJson.version
 };
+
+const slpConfig = {
+	apiEndpoints: {
+		PROD: 'https://obs.cheqzone.com',
+		DEV: 'https://obs.dev.cheqzone.com',
+	},
+	slpPath: 'user-validation',
+	slpLoggerEndpoint: 'https://slplogger.production.cheq-platform.com',
+	slpTimeout: 100,
+	defaultApiVersionV1:'v1',
+	defaultApiVersionV3:'v3',
+	middlewareVersion: pJson.version
+};
+
+module.exports = { rtiConfig, slpConfig };
+

@@ -1,12 +1,11 @@
 const { spawn } = require('child_process');
 const request = require('../../lib/utils/request');
-const { eventsTypes, rtiMode } = require('../../lib/constans/rti');
+const { eventsTypes } = require('../../lib/constants/common');
+const { rtiMode } = require('../../lib/constants/rti');
 jest.setTimeout(100000);
 jest.useFakeTimers();
 
-
 describe('e2e tests', () =>{
-
 	let server;
 
 	beforeAll(done => {

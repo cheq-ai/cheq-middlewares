@@ -1,7 +1,7 @@
 const { rti } = require('../../index');
 const request = require('../../lib/utils/request');
-const config = require('../../config');
-const errorsCodes = require('../../lib/constans/errorsCodes');
+const rtiConfig = require('../../config');
+const errorsCodes = require('../../lib/constants/errorsCodes');
 
 describe('rti middleware', () => {
 
@@ -40,7 +40,7 @@ describe('rti middleware', () => {
 		const options = {
 			apiKey: 'abc',
 			tagHash: 'abc',
-			apiEndpoint: config.apiEndpoints.US,
+			apiEndpoint: rtiConfig.apiEndpoints.US,
 			URIExclusion: 'abc'
 		};
 		expect(() => rti(options)).toThrow(errorsCodes.errInvalidURIExclusionArray);
@@ -53,7 +53,7 @@ describe('rti middleware', () => {
 		const options = {
 			apiKey: 'abc',
 			tagHash: 'abc',
-			apiEndpoint: config.apiEndpoints.US,
+			apiEndpoint: rtiConfig.apiEndpoints.US,
 			URIExclusion: []
 		};
 		expect(rti(options)).toBeInstanceOf(Function);

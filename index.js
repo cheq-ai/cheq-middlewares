@@ -1,4 +1,4 @@
 const middlewares = require('./lib/middlewares');
-const { eventsTypes } = require('./lib/constans/rti');
+const { eventsTypes } = require('./lib/constants/common');
 
 module.exports = {...middlewares, eventsTypes };
