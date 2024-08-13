@@ -1,6 +1,6 @@
 const express = require('express');
 const {rti: rtiExpressMiddleware} = require('../../lib/middlewares');
-const {eventsTypes} = require('../../lib/constans/rti');
+const { eventsTypes } = require('../../lib/constants/common');
 
 const app = express();
 
