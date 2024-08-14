@@ -1,6 +1,6 @@
 {
   "name": "@cheq.ai/cheq-middlewares",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "CHEQ middlewares",
   "main": "index.js",
   "scripts": {
