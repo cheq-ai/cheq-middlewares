@@ -238,16 +238,16 @@ const options = {
 
 
 
-### Usage example
+### Usage example RTI
 
 
 ```` js
 const express = require('express');
 const app = express();
+const PORT = process.env.PORT || 5000;
 const { rti, eventsTypes } = require('@cheq.ai/cheq-express-middlewares');
-
-const options = {...};
-const middleware = rti(options);
+const rtiOptions = {...};
+const middleware = rti(rtiOptions);
 
 app.get('/subscribe', middleware(eventsTypes.SUBSCRIBE), function (req, res) {
   res.send('Hello World');
@@ -256,5 +256,37 @@ app.get('/page_load', middleware(eventsTypes.PAGE_LOAD), function (req, res) {
   res.send('Hello World');
 })
 
-app.listen(3000);
+app.listen(PORT);
 ````
+
+### Usage example SLP
+
+
+```` js
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+const { slp, eventsTypes } = require('@cheq.ai/cheq-express-middlewares');
+const slpOptions = {...};
+const slpMiddleware = slp(slpOptions);
+
+app.post('/form-submit', slpMiddleware(eventsTypes.FORM_SUBMISSION), (req, res) => {
+  const slpRes = res.locals.slpRes
+
+  res.json(slpRes);
+});
+
+app.listen(PORT);
+````
+
+```` js
+const slpOptions = {
+  apiKey: process.env.API_KEY,
+  tagHash: process.env.TAG_HASH,
+  apiEndpoint: SERVICE_ENDPOINT,
+  mode: "fast",
+  timeout: null,
+};
+````
+
+
