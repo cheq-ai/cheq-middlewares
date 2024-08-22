@@ -94,6 +94,28 @@ const options = {
 }
 ````
 
+##### sessionSyncMode
+
+Server (RTI) and Client (cheq-tag) are able to recognize the same session visit to the website by *either* of these 3 methods:
+
+- `banRti` - Will construct the rti-request with USER_AGENT field (IP is mandatory so it is included on all 3 methods).
+
+- `rtiCookie` - Will construct the rti-request with CHEQ_COOKIE (rti cookie) field. This is fetched from the site visit former RTI request. 
+
+- `requestId` - Will construct the rti-request with REQUEST_ID field. This is fetched from the response of the client cheq-tag.
+
+- `none` - Will construct the rti-request with all above fields.
+
+The default value will be `none`.
+
+```` js
+const options = {
+    ...
+    sessionSyncMode: 'none'
+    ...
+}
+````
+
 ##### Threat type codes
 
 Threat types are devided to two groups:
