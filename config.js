@@ -10,8 +10,6 @@ const rtiConfig = {
 	rtiPath: 'realtime-interception',
 	rtiLoggerEndpoint: 'https://rtilogger.production.cheq-platform.com',
 	rtiTimeout: 100,
-	defaultApiVersionV1:'v1',
-	defaultApiVersionV3:'v3',
 	middlewareVersion: pJson.version
 };
 
@@ -23,8 +21,6 @@ const slpConfig = {
 	slpPath: 'user-validation',
 	slpLoggerEndpoint: 'https://slplogger.production.cheq-platform.com',
 	slpTimeout: 100,
-	defaultApiVersionV1:'v1',
-	defaultApiVersionV3:'v3',
 	middlewareVersion: pJson.version
 };
 
