@@ -21,4 +21,4 @@ export const slpConfig = {
   middlewareVersion: pJson.version,
 };
 
-module.exports = { rtiConfig, slpConfig };
+module.exports = { rtiConfig, rtiConfigV4, slpConfig };
