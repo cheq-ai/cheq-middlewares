@@ -8,7 +8,7 @@ const rtiConfig = {
 };
 
 const rtiConfigV4 = {
-	rtiPath: '/defend/4.0/traffic',
+	rtiPath: 'defend/4.0/traffic',
 	rtiLoggerEndpoint: 'https://rtilogger.production.cheq-platform.com',
 	rtiTimeout: 100,
 	middlewareVersion: pJson.version,
