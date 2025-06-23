@@ -21,4 +21,11 @@ const slpConfig = {
 	middlewareVersion: pJson.version,
 };
 
-module.exports = { rtiConfig, rtiConfigV4, slpConfig };
+const slpConfigV4 = {
+	slpPath: 'form-guard/4.0',
+	slpLoggerEndpoint: 'https://slplogger.production.cheq-platform.com',
+	slpTimeout: 100,
+	middlewareVersion: pJson.version,
+};
+
+module.exports = { rtiConfig, rtiConfigV4, slpConfig, slpConfigV4 };
