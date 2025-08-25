@@ -1,6 +1,6 @@
 {
   "name": "@cheq.ai/cheq-middlewares",
-  "version": "1.2.6",
+  "version": "1.2.5",
   "description": "CHEQ middlewares",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,6 @@
     "express": "^4.1.1",
     "jest": "^27.5.1"
   },
-  "dependencies": {},
   "directories": {
     "lib": "lib",
     "test": "test"
